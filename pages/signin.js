@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../Redux/userSlice';
 import { ToastContainer } from 'react-toastify';
 import { useRouter } from 'next/router';
-import { getWishlist } from '../Redux/wishlistSlice';
+
 
 
 export  function Redirect({ to }) {

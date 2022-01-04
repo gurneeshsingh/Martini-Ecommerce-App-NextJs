@@ -28,7 +28,7 @@ const users = () => {
     useEffect(() => {
         async function getAllUsersFromDb() {
             try {
-                const response = await axios.get('http://localhost:8000/api/user', {
+                const response = await axios.get('http://localhost:8000/api/user' || 'https://martiniapi.herokuapp.com/api/user', {
                     headers: {
                         'auth-token': adminUser?.authToken
                     }
@@ -51,7 +51,7 @@ const users = () => {
             copy?.splice(index, 1)
         }
         try {
-            const response = await axios.delete(`http://localhost:8000/api/user/${id}`, {
+            const response = await axios.delete(`http://localhost:8000/api/user/${id}` || `https://martiniapi.herokuapp.com/api/user/${id}`, {
                 headers: {
                     'auth-token': adminUser?.authToken
                 }
