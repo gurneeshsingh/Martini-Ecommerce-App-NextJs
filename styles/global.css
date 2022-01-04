@@ -1,0 +1,52 @@
+* {
+  font-family: "Urbanist", sans-serif;
+}
+
+.register_gradient {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("https://images.pexels.com/photos/6984661/pexels-photo-6984661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+      center ;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin_gradient {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("https://images.pexels.com/photos/8422531/pexels-photo-8422531.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+      center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.widgetBtn{
+  padding: 4px 9px;
+  border: none;
+  border-radius: 11px;
+}
+
+.widgetBtn.shipped{
+  background-color: #ebf1fe;
+  color: #2a7ade;
+
+}
+
+.widgetBtn.pending{
+  background-color: #fff0f1;
+  color: #d95087;
+}
+
+.widgetBtn.delivered{
+  background-color: #e5faf2;
+  color: #3bb077;
+}
