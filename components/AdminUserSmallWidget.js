@@ -16,7 +16,7 @@ const AdminUserSmallWidget = () => {
         async function getUsersFromDb() {
             try {
                 setLoading(true)
-                const response = await axios.get('http://localhost:8000/api/user/?new=true' || 'https://martiniapi.herokuapp.com/api/user/?new=true', {
+                const response = await axios.get('https://martiniapi.herokuapp.com/api/user/?new=true', {
                     headers: {
                         'auth-token': currentUser.authToken
                     }

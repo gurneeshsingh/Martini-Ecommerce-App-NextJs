@@ -16,7 +16,7 @@ const success = () => {
     useEffect(() => {
         async function createorder() {
             try {
-                const response = await axios.post('http://localhost:8000/api/order' || 'https://martiniapi.herokuapp.com/api/order', {
+                const response = await axios.post('https://martiniapi.herokuapp.com/api/order', {
                     userId: currentUser.id,
                     products: cart.products.map((product) => ({ productId: product._id, quantity: product.productQuantity, brand: product.brand, title: product.title, img: product.img, size:product.size })),
                     amount: cart.cartTotalAmount,

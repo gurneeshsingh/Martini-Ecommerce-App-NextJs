@@ -14,7 +14,7 @@ const AdminOrdersBigWidget = () => {
         async function getOrdersFromDb() {
             try {
                 setLoading(true)
-                const response = await axios.get('http://localhost:8000/api/order/?new=true' || 'https://martiniapi.herokuapp.com/api/order/?new=true', {
+                const response = await axios.get('https://martiniapi.herokuapp.com/api/order/?new=true', {
                     headers: {
                         'auth-token': currentUser.authToken
                     }

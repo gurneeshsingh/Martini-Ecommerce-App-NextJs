@@ -19,7 +19,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 export const getStaticPaths = async () => {
-    const response = await axios.get('http://localhost:8000/api/product' || 'https://martiniapi.herokuapp.com/api/product');
+    const response = await axios.get('https://martiniapi.herokuapp.com/api/product');
     const data = response.data;
 
     const paths = data?.map((element) => {
@@ -39,7 +39,7 @@ export const getStaticProps = async (context) => {
 
     const id = context.params.id
     try {
-        const response = await axios.get(`http://localhost:8000/api/product/find/${id}` || `https://martiniapi.herokuapp.com/api/product/find${id}`)
+        const response = await axios.get(`https://martiniapi.herokuapp.com/api/product/find${id}`)
         const data = response.data;
 
         return {
@@ -101,7 +101,7 @@ const Product = ({ product }) => {
                     theme: "colored"
                 })
             } else {
-                const response = await axios.post('http://localhost:8000/api/wishlist' || 'https://martiniapi.herokuapp.com/api/wishlist', myObj, {
+                const response = await axios.post('https://martiniapi.herokuapp.com/api/wishlist', myObj, {
                     headers: {
                         'auth-token': user?.authToken
                     }

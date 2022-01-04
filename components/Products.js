@@ -15,7 +15,7 @@ const Products = ({ category, filter, sort }) => {
     useEffect(() => {
         async function getProducts() {
             try {
-                const response = await axios.get(category ? `http://localhost:8000/api/product?category=${category}` || `https://martiniapi.herokuapp.com/api/product?category=${category}` : 'http://localhost:8000/api/product' || `https://martiniapi.herokuapp.com/api/product`);
+                const response = await axios.get(category ? `https://martiniapi.herokuapp.com/api/product?category=${category}` : `https://martiniapi.herokuapp.com/api/product`);
                 setproducts(response.data)
             } catch (error) {
                 console.log(error);

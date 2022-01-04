@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export const addProduct = createAsyncThunk('addproduct', async (product) => {
     const TOKEN = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.authToken;
-    const response = await axios.post(`http://localhost:8000/api/product/addproduct` || `https://martiniapi.herokuapp.com/api/product/addproduct`, product, {
+    const response = await axios.post(`https://martiniapi.herokuapp.com/api/product/addproduct`, product, {
         headers: {
             'auth-token': TOKEN
         }
@@ -17,14 +17,14 @@ export const addProduct = createAsyncThunk('addproduct', async (product) => {
 
 export const getProducts = createAsyncThunk('product', async () => {
 
-    const response = await axios.get('http://localhost:8000/api/product' || 'https://martiniapi.herokuapp.com/api/product');
+    const response = await axios.get('https://martiniapi.herokuapp.com/api/product');
 
     return response.data
 });
 
 export const deleteProduct = createAsyncThunk('deleteProduct', async (id) => {
     const TOKEN = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.authToken;
-    const response = await axios.delete(`http://localhost:8000/api/product/${id}` || `https://martiniapi.herokuapp.com/api/product/${id}`, {
+    const response = await axios.delete(`https://martiniapi.herokuapp.com/api/product/${id}`, {
         headers: {
             'auth-token': TOKEN
         }
@@ -34,7 +34,7 @@ export const deleteProduct = createAsyncThunk('deleteProduct', async (id) => {
 
 export const editProduct = createAsyncThunk('editProduct', async (id, product) => {
     const TOKEN = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.authToken;
-    const response = await axios.put(`http://localhost:8000/api/product/${id}` || `https://martiniapi.herokuapp.com/api/product/${id}`, product, {
+    const response = await axios.put(`https://martiniapi.herokuapp.com/api/product/${id}`, product, {
         headers: {
             'auth-token': TOKEN
         }
