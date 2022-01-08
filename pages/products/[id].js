@@ -38,7 +38,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
 
     const id = context.params.id
-    try {
+   
         const response = await axios.get(`https://martiniapi.herokuapp.com/api/product/find${id}`)
         const data =  response.data;
         const finalData = JSON.stringify(data);
@@ -47,15 +47,8 @@ export const getStaticProps = async (context) => {
             props: {
                 product: finalData
             }
-        }
-    } catch (error) {
-        console.log(error);
-        return {
-            props: {
-                error
-            }
-        }
-    }
+        
+    } 
 }
 
 const Product = ({ product }) => {
