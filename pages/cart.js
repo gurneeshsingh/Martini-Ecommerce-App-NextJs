@@ -107,7 +107,7 @@ const Cart = () => {
                                     token={onToken}
                                     currency="INR"
                                 >
-                                    <button className="font-medium sm:p-3 p-2 tracking-wide bg-black text-white outline-none text-xs sm:text-base disabled:bg-gray-400 disabled:pointer-events-none" disabled={!user}>CHECKOUT NOW</button>
+                                    <button className="font-medium sm:p-3 p-2 tracking-wide bg-black text-white outline-none text-xs sm:text-base disabled:bg-gray-400  disabled:cursor-not-allowed" disabled={!user}>CHECKOUT NOW</button>
                                 </StripeCheckout>
 
                             </div>
@@ -189,7 +189,7 @@ const Cart = () => {
                                         token={onToken}
                                         currency="INR"
                                     >
-                                        <button className="bg-black text-white p-3 tracking-wide font-semibold w-full disabled:bg-gray-400 disabled:pointer-events-none" disabled={!user}>CHECKOUT</button>
+                                        <button className="bg-black text-white p-3 tracking-wide font-semibold w-full disabled:bg-gray-400  disabled:cursor-not-allowed" disabled={!user}>CHECKOUT</button>
                                         {!user && <p className="text-sm text-red-600 font-semibold mt-3 tracking-wide text-center">Login to place your order</p>}
                                     </StripeCheckout>
                                 </div>
