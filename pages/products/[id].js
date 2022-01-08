@@ -40,7 +40,7 @@ export const getStaticProps = async (context) => {
     const id = context.params.id
     try {
         const response = await axios.get(`https://martiniapi.herokuapp.com/api/product/find${id}`)
-        const data = response.data;
+        const data = response.json();
 
         return {
             props: {
