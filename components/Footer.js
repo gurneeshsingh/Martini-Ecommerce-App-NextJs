@@ -48,7 +48,7 @@ const Footer = () => {
                     {/* contact heading  */}
                     <h1 className="font-bold text-xl sm:text-2xl sm:mb-8 mb-5" >Contact</h1>
                     {/* address  */}
-                    <p className="flex items-center mb-4 text-[14px] sm:text-base font-medium text-gray-600 tracking-wide"><FiMapPin size="1.3rem" style={{ marginRight: "1rem" }} />622, Dixi, Ontario, Ca</p>
+                    <p className="flex items-center mb-4 text-[14px] sm:text-base font-medium text-gray-600 tracking-wide"><FiMapPin size="1.3rem" style={{ marginRight: "1rem" }} />Jaipur, Rajasthan, IN</p>
                     {/* contact number  */}
                     <p className="flex items-center mb-4 text-[14px] sm:text-base font-medium text-gray-600 tracking-wide"><BiPhone size="1.3rem" style={{ marginRight: "1rem" }} />+1 234 56 78 90</p>
 

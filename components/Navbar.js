@@ -10,6 +10,7 @@ import { VscPackage } from "react-icons/vsc";
 import { FiHeart } from "react-icons/fi";
 import { AiOutlineControl } from "react-icons/ai";
 import { resetWishlist } from '../Redux/wishlistSlice';
+import Image from "next/image";
 
 
 
@@ -40,8 +41,11 @@ const Navbar = () => {
                 <Link href="/productlist/dress"><a className="items-center tracking-wide text-xs sm:text-base hidden sm:inline-flex hover:bg-themePink transition-all rounded-lg py-1 px-2 uppercase">Dresses</a></Link>
                 <Link href="/productlist/footwear"><a className="items-center tracking-wide hidden sm:inline-flex text-xs sm:text-base uppercase hover:bg-themePink transition-all rounded-lg py-1 px-2">Footwear</a></Link>
             </div>
-            <div className="flex-grow items-center flex justify-center font-bold sm:text-3xl text-xl tracking-wide">
-                <Link href="/">MARTINI.</Link>
+            <div className="hidden flex-grow items-center md:flex justify-center cursor-pointer ">
+                <Link href="/"><Image src="/Images/martinilogo.jpg" objectFit='contain' height={55} width={150}/></Link>
+            </div>
+            <div className="flex flex-grow items-center md:hidden justify-center cursor-pointer ">
+                <Link href="/"><Image src="/Images/mlogo.png" objectFit='cover' height={50} width={70}/></Link>
             </div>
             <div className="flex-grow items-center flex sm:space-x-7 space-x-3 sm:justify-end justify-end sm:tracking-wide sm:text-base text-xs relative">
                 {!user ? <>

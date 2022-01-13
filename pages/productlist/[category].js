@@ -96,7 +96,7 @@ const productlist = () => {
                             </select>
                         </div>
                         {/* remove filter button  */}
-                        {Object.keys(filters).length !== 0 && <button type="button" className="flex items-center justify-center tracking-wide bg-gray-800 text-white sm:px-3 sm:py-2 px-2 py-1 transition font-medium text-xs sm:text-base" onClick={removeFilters}>Remove Filters<VscClose fontSize="1.2rem" color="red" style={{ marginLeft: "2px" }} /></button>}
+                        {Object.keys(filters).length !== 0 && <button type="button" className="flex items-center justify-center tracking-wide bg-red-600 text-white md:px-3 md:py-2 px-2 py-1.5 transition font-medium text-xs md:text-base md:relative md:right-0 md:top-0 absolute right-8 top-72" onClick={removeFilters}>Remove Filters</button>}
 
 
                         <div className="flex sm:space-x-3 space-y-2 sm:space-y-0 flex-col sm:flex-row">

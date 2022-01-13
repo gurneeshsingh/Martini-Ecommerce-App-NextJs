@@ -24,6 +24,7 @@ const Cart = () => {
     const dispatch = useDispatch();
     const [stripeClientToken, setStripeClientToken] = useState(null);
     const user = useSelector((state) => state.user.currentUser);
+    const wishlist = useSelector((state) => state.wishlist.products);
 
 
 
@@ -94,15 +95,15 @@ const Cart = () => {
                                 {/* top texts div  */}
                                 <div className="sm:flex hidden underline ">
                                     <p className="mx-4 tracking-wide text-sm sm:text-base flex items-center cursor-pointer"><BsBag style={{ marginRight: "5px" }} />Shopping Bag ({cart.cartTotalQuantity})</p>
-                                    <p className="mx-4 tracking-wide text-sm sm:text-base flex items-center cursor-pointer" onClick={()=>router.push('/wishlist')}><BsHeart style={{ marginRight: "5px" }}  /> Wishlist (0)</p>
+                                    <p className="mx-4 tracking-wide text-sm sm:text-base flex items-center cursor-pointer" onClick={() => router.push('/wishlist')}><BsHeart style={{ marginRight: "5px" }} /> {`Wishlist (${wishlist?.length})`}</p>
                                 </div>
                                 <StripeCheckout
                                     name="Martini"
-                                    image="https://cdn-icons.flaticon.com/png/512/5343/premium/5343420.png?token=exp=1636715134~hmac=6fa2179ff6d39aada58b7f88da790d5b"
+                                    image="/favicon.png"
                                     billingAddress
                                     shippingAddress
-                                    description={`Your total is INR ${cart.cartTotalAmount}`}
-                                    amount={cart.cartTotalAmount * 100}
+                                    description={cart.cartTotalAmount > 1999 ?`Your total is INR ${cart.cartTotalAmount}`: `Your total is INR ${cart.cartTotalAmount + 99}`}
+                                    amount={cart.cartTotalAmount > 1999 ? (cart.cartTotalAmount * 100): ((cart.cartTotalAmount + 99) * 100 )}
                                     stripeKey={stripePublishKey}
                                     token={onToken}
                                     currency="INR"
@@ -167,24 +168,24 @@ const Cart = () => {
                                         <p>&#8377; {cart.cartTotalAmount}</p>
                                     </div>
                                     <div className="my-4 flex justify-between">
-                                        <h1>Estimated Shipping</h1>
-                                        <p>&#8377; 5.90</p>
+                                        <h1 >Estimated Shipping</h1>
+                                        <p>&#8377; 99</p>
                                     </div>
-                                    <div className="my-4 flex justify-between">
+                                    {cart.cartTotalAmount>1999 ?<div className="my-4 flex justify-between">
                                         <h1>Shipping Discount</h1>
-                                        <p>&#8377; -5.90</p>
-                                    </div>
+                                        <p>&#8377; -99</p>
+                                    </div> : false}
                                     <div className="my-4 flex justify-between font-semibold text-xl mb-8">
                                         <h1>Total</h1>
-                                        <p>&#8377; {cart.cartTotalAmount}</p>
+                                        {cart.cartTotalAmount>1999 ?<p>&#8377; {cart.cartTotalAmount}</p> : <p>&#8377; {cart.cartTotalAmount + 99}</p> }
                                     </div>
                                     <StripeCheckout
                                         name="Martini"
-                                        image="https://cdn-icons.flaticon.com/png/512/5343/premium/5343420.png?token=exp=1636715134~hmac=6fa2179ff6d39aada58b7f88da790d5b"
+                                        image="/favicon.png"
                                         billingAddress
                                         shippingAddress
-                                        description={`Your total is INR ${cart.cartTotalAmount}`}
-                                        amount={cart.cartTotalAmount * 100}
+                                        description={cart.cartTotalAmount > 1999 ?`Your total is INR ${cart.cartTotalAmount}`: `Your total is INR ${cart.cartTotalAmount + 99}`}
+                                        amount={cart.cartTotalAmount > 1999 ? (cart.cartTotalAmount * 100): ((cart.cartTotalAmount + 99) * 100 )}
                                         stripeKey={stripePublishKey}
                                         token={onToken}
                                         currency="INR"
