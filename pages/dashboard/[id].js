@@ -19,20 +19,26 @@ const adminProduct = () => {
     const id = router.query.id;
     const dispatch = useDispatch()
     const singleProduct = useSelector((state) => state.product.products.find((item) => item._id === id));
-    console.log(singleProduct);
+    const { isFetching, error } = useSelector((state) => state.product);
+    
     const [values, setValues] = useState({
-        brand: "",
+        brand: "" ,
         title: "",
         desc: "",
         price: 0,
-        img: ""
+        inStock : true
+        
     })
 
 
     function handleChange(e) {
+        let updatedValue = e.target.value;
+        if (updatedValue == "true" || updatedValue == 'false') {
+            updatedValue = JSON.parse(updatedValue);
+        }
         setValues((preval) => {
             return {
-                ...preval, [e.target.name]: e.target.value
+                ...preval, [e.target.name]: updatedValue
             }
         })
     }
@@ -46,10 +52,10 @@ const adminProduct = () => {
         const product = {
             ...singleProduct, ...values
         }
-        id && dispatch(editProduct(id, product))
+        product && dispatch(editProduct(product))
     }
 
-
+   console.log(isFetching);
     return (
         <>
             <Head>
@@ -81,16 +87,14 @@ const adminProduct = () => {
                                 <label htmlFor="desc" className="text-gray-600 font-medium text-base sm:text-lg mb-1">Product Description</label>
                                 <input type="text" id="desc" placeholder={singleProduct?.desc} className="text-gray-500 text-xs sm:text-sm border-b outline-none border-black mb-5" autoComplete="off" value={values?.desc} name="desc" onChange={handleChange} required />
                                 <label htmlFor="stock" className="text-gray-600 font-medium text-base sm:text-lg mb-1">In Stock</label>
-                                <select name="stock" id="stock" className="border border-gray-700 outline-none text-gray-500 text-xs sm:text-sm mb-5" >
-                                    <option value="true" defaultChecked>Yes</option>
-                                    <option value="false">No</option>
+                                <select name="inStock" id="inStock"  className="border border-gray-700 outline-none text-gray-500 text-xs sm:text-sm mb-5" value={values?.inStock}  onChange={handleChange} >
+                                    <option value={true}  defaultChecked>Yes</option>
+                                    <option value={false}>No</option>
                                 </select>
                                 <label htmlFor="price" className="text-gray-600 font-medium text-base sm:text-lg mb-1">Price</label>
                                 <input type="number" id="price" name="price" onChange={handleChange} required placeholder={singleProduct?.price} className="text-gray-500 text-xs sm:text-sm border-b outline-none border-black mb-5" autoComplete="off" value={values?.price} />
 
-                                <label htmlFor="img" className="text-gray-600 font-medium text-base sm:text-lg mb-1">Upload Image</label>
-                                <input type="text" id="img" name="img" onChange={handleChange} required placeholder="Image Url" className="text-gray-500 text-xs sm:text-sm border outline-none border-black mb-5 p-1" autoComplete="off" value={values?.img} />
-                                <button type="submit" className="py-2 px-3 rounded-lg text-sm sm:text-base bg-green-700 text-white shadow-lg my-3" >Update</button>
+                                <button type="submit" className="py-2 px-3 rounded-lg text-sm sm:text-base bg-green-700 text-white shadow-lg my-3 disabled:cursor-not-allowed disabled:bg-gray-300" disabled={isFetching}  >Update</button>
 
                             </form>
                         </div>

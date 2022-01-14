@@ -13,7 +13,7 @@ export const categories = [
   },
   {
     id: 3,
-    img: 'https://images.pexels.com/photos/5480696/pexels-photo-5480696.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    img: 'https://lmsin.net/cdn-cgi/image/h=831,w=615,q=60,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/lifestyle/1000010902107-Blue-Blue-1000010902107_01-2100.jpg',
     title: 'LIGHT JACKETS',
     category: "jacket"
   }

@@ -20,8 +20,8 @@ const CategoryItem = ({ item }) => {
             {/* for mobile devices  */}
             <Link href={`/productlist/${item.category}`}>
                 <a>
-                    <div className="flex flex-col py-3 relative hover:opacity-80 transition sm:hidden cursor-pointer ">
-                        <Image src={item.img} height="260rem" width="330rem" objectFit="cover" />
+                    <div className="flex flex-col py-3 relative hover:opacity-80 transition sm:hidden cursor-pointer  ">
+                        <Image src={item.img} height="250" width="200" objectFit="cover" />
                         <div className="absolute top-0 left-0 flex flex-col justify-center items-center w-full h-full">
                             <h1 className="font-bold text-white text-2xl mb-3">{item.title}</h1>
                             <button type="button" className=" font-semibold  p-2 bg-themePink tracking-wider text-xs">EXPLORE</button>

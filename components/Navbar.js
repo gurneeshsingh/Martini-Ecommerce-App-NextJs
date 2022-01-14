@@ -34,7 +34,7 @@ const Navbar = () => {
 
 
     return (
-        <header className="flex sm:h-20 h-14 sm:px-5 px-1.5 py-5 justify-between items-center shadow-md " >
+        <header className="flex sm:h-20 h-14 sm:px-5 px-2 py-5 justify-between items-center shadow-md " >
             <div className="flex-grow  flex items-center sm:justify-between sm:w-48">
                 <Link href="/productlist/women"><a className="items-center tracking-wide text-xs sm:text-base  hover:bg-themePink transition-all rounded-lg py-1 px-2 uppercase">All Products</a></Link>
                 <Link href="/productlist/top"><a className="items-center tracking-wide text-xs sm:text-base  hidden sm:inline-flex hover:bg-themePink transition-all rounded-lg py-1 px-2 uppercase" >Tops</a></Link>
@@ -47,7 +47,7 @@ const Navbar = () => {
             <div className="flex flex-grow items-center md:hidden justify-center cursor-pointer ">
                 <Link href="/"><Image src="/Images/mlogo.png" objectFit='cover' height={50} width={70}/></Link>
             </div>
-            <div className="flex-grow items-center flex sm:space-x-7 space-x-3 sm:justify-end justify-end sm:tracking-wide sm:text-base text-xs relative">
+            <div className="flex-grow items-center flex sm:space-x-7 space-x-4 sm:justify-end justify-end sm:tracking-wide sm:text-base text-xs relative">
                 {!user ? <>
                     <Link href="/register" >REGISTER</Link>
                     <Link href="/signin" >SIGN IN</Link>
@@ -65,7 +65,7 @@ const Navbar = () => {
                         <div className="w-full flex items-center my-2 cursor-pointer hover:bg-themePink p-1 rounded-lg transition-all" onClick={() => router.push('/wishlist')}><FiHeart size="1rem" /> <p className="sm:text-sm text-xs font-medium ml-3">Wishlist ({wishlist.length})</p></div>
                     </div>}
 
-                <BsBag fontSize="1.5rem" cursor="pointer" className="sm:w-7 w-[15px]" onClick={() => router.push('/cart')} />
+                <BsBag fontSize="1.5rem" cursor="pointer" className="sm:w-7 w-[18px]" onClick={() => router.push('/cart')} />
 
                 {/* custom badge for cart quantity  */}
                 {quantity > 0 && <span className="hidden absolute -right-2 -top-2 h-6 w-6 rounded-full  bg-purple-600 text-white font-semibold text-xs sm:flex items-center justify-center transition">{quantity}</span>}

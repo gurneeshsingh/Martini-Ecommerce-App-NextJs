@@ -31,8 +31,8 @@ const allproducts = () => {
     }
 
     function handleDelete(id) {
-        const index = products.findIndex((item) => item._id === id)
-        dispatch(deleteProduct(index))
+       
+        dispatch(deleteProduct(id))
     }
 
     // for data grid we have to define the columns  

@@ -58,7 +58,7 @@ const Footer = () => {
             </div>
         
             <div className="flex items-center justify-center h-8 bg-themePink text-center tracking-wider text-sm sm:text-base">
-            <p>Copyright @ Martini. 2021</p>
+            <p>Copyright @ Martini. 2022</p>
             </div>
         </>
     )

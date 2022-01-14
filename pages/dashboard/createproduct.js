@@ -96,7 +96,7 @@ const createproduct = () => {
                             <p className="text-gray-500 text-xs tracking-wide font-semibold mb-5">Add multiple sizes seperated by a comma (,)</p>
                             <label htmlFor="img" className="text-gray-600 font-medium text-base sm:text-lg mb-1">Upload Image</label>
                             <input type="text" id="img" name="img" placeholder="Image Url" className="text-gray-500 text-xs sm:text-sm  outline-none mb-5 p-1 rounded-md" required onChange={handleChange} autoComplete="off" />
-                            <button type="submit" disabled={isFetching} className="py-2 px-3 rounded-lg text-sm sm:text-base bg-green-700 text-white shadow-lg my-3 disabled:bg-gray-300 disabled:text-gray-100 disabled:pointer-events-none" >Create</button>
+                            <button type="submit" disabled={isFetching} className="py-2 px-3 rounded-lg text-sm sm:text-base bg-green-700 text-white shadow-lg my-3 disabled:bg-gray-300 disabled:text-gray-100 disabled:cursor-not-allowed" >Create</button>
 
                         </form>
                     </div>

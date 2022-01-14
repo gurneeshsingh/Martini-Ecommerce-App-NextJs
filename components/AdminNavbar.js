@@ -8,6 +8,7 @@ import { useState } from "react";
 import { VscPackage } from "react-icons/vsc";
 import { FiHeart } from "react-icons/fi";
 import { AiOutlineControl } from "react-icons/ai";
+import Image from "next/image";
 
 
 const AdminNavbar = ({toggle, setToggle}) => {
@@ -36,8 +37,11 @@ const AdminNavbar = ({toggle, setToggle}) => {
             <div className="flex-grow items-center flex  font-semibold sm:text-3xl text-xl tracking-wide text-purple-700">
                 <Link href="/dashboard">Dashboard</Link>
             </div>
-            <div className="flex-grow items-center flex justify-center font-bold sm:text-3xl text-xl tracking-wide">
-                <Link href="/">MARTINI.</Link>
+            <div className="hidden flex-grow items-center md:flex justify-center cursor-pointer ">
+                <Link href="/"><Image src="/Images/martinilogo.jpg" objectFit='contain' height={55} width={150}/></Link>
+            </div>
+            <div className="flex flex-grow items-center md:hidden justify-center cursor-pointer ">
+                <Link href="/"><Image src="/Images/mlogo.png" objectFit='cover' height={50} width={70}/></Link>
             </div>
             <div className="flex-grow items-center flex sm:space-x-7 space-x-3 sm:justify-end justify-end sm:tracking-wide sm:text-base text-xs relative">
                 {!user ? <>

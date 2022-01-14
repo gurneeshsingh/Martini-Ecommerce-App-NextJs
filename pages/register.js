@@ -49,7 +49,7 @@ const Register = () => {
             <ToastContainer toastStyle={{ backgroundColor: "#F9DBE0", color:"black",  boxShadow:"none" }}/>
 
             <main className="w-full h-screen  register_gradient ">
-                <section className="sm:p-7 p-5 sm:w-[45%] w-[80%] bg-white">
+                <section className="sm:p-7 p-5 sm:w-[45%] w-[80%] bg-gray-100 opacity-75 border-black border">
                     {/* heading  */}
                     <h1 className="text-base text-center sm:text-left sm:text-2xl  tracking-wide mb-4">CREATE AN ACCOUNT</h1>
                     {/* form  */}
