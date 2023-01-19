@@ -49,7 +49,7 @@ const SingleProduct = ({ product }) => {
 
     async function getWishlistFromServer() {
         try {
-            const response = await axios.get(`https://martiniapi.herokuapp.com/api/wishlist/find/${user?.id}`, {
+            const response = await axios.get(`https://martiniapi.cyclic.app/api/wishlist/find/${user?.id}`, {
                 headers: {
                     'auth-token': user?.authToken
                 }
@@ -85,7 +85,7 @@ const SingleProduct = ({ product }) => {
                     theme: "colored"
                 })
             } else {
-                const response = await axios.post(`https://martiniapi.herokuapp.com/api/wishlist`, myObj, {
+                const response = await axios.post(`https://martiniapi.cyclic.app/api/wishlist`, myObj, {
                     headers: {
                         'auth-token': user?.authToken
                     }

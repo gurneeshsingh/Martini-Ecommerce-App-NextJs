@@ -6,14 +6,14 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export const loginUser = createAsyncThunk('login', async (user) => {
 
-    const response = await axios.post('https://martiniapi.herokuapp.com/api/auth/login', user);
+    const response = await axios.post('https://martiniapi.cyclic.app/api/auth/login', user);
     
     return response.data
 });
 
 export const registerUser = createAsyncThunk('register', async (user) => {
 
-    const response = await axios.post('https://martiniapi.herokuapp.com/api/auth/register', user);
+    const response = await axios.post('https://martiniapi.cyclic.app/api/auth/register', user);
     return response.data
 });
 

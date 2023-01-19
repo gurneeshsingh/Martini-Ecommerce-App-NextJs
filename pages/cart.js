@@ -32,7 +32,7 @@ const Cart = () => {
     useEffect(() => {
         async function makeRequestToServer() {
             try {
-                const response = await axios.post("https://martiniapi.herokuapp.com/api/checkout/payment", { tokenId: stripeClientToken.id, amount: cart.cartTotalAmount * 100 });
+                const response = await axios.post("https://martiniapi.cyclic.app/api/checkout/payment", { tokenId: stripeClientToken.id, amount: cart.cartTotalAmount * 100 });
                 dispatch(saveStripeData(response.data))
                 router.push(`/success`)
 

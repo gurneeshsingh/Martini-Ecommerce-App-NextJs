@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export const addProduct = createAsyncThunk('addproduct', async (product) => {
     const TOKEN = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.authToken;
-    const response = await axios.post(`https://martiniapi.herokuapp.com/api/product/addproduct`, product, {
+    const response = await axios.post(`https://martiniapi.cyclic.app/api/product/addproduct`, product, {
         headers: {
             'auth-token': TOKEN
         }
@@ -17,7 +17,7 @@ export const addProduct = createAsyncThunk('addproduct', async (product) => {
 
 export const getProducts = createAsyncThunk('product', async () => {
 
-    const response = await axios.get('https://martiniapi.herokuapp.com/api/product');
+    const response = await axios.get('https://martiniapi.cyclic.app/api/product');
 
     return response.data
 });
@@ -25,7 +25,7 @@ export const getProducts = createAsyncThunk('product', async () => {
 export const deleteProduct = createAsyncThunk('deleteProduct', async (id) => {
 
     const TOKEN = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.authToken;
-    const response = await axios.delete(`https://martiniapi.herokuapp.com/api/product/${id}`, {
+    const response = await axios.delete(`https://martiniapi.cyclic.app/api/product/${id}`, {
         headers: {
             'auth-token': TOKEN
         }
@@ -35,7 +35,7 @@ export const deleteProduct = createAsyncThunk('deleteProduct', async (id) => {
 
 export const editProduct = createAsyncThunk('editProduct', async (product) => {
     const TOKEN = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.authToken;
-    const response = await axios.put(`https://martiniapi.herokuapp.com/api/product/${product?._id}`, product, {
+    const response = await axios.put(`https://martiniapi.cyclic.app/api/product/${product?._id}`, product, {
         headers: {
             'auth-token': TOKEN
         }

@@ -55,7 +55,7 @@ const adminProduct = () => {
         product && dispatch(editProduct(product))
     }
 
-   console.log(isFetching);
+  
     return (
         <>
             <Head>
