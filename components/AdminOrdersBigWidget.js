@@ -14,7 +14,7 @@ const AdminOrdersBigWidget = () => {
         async function getOrdersFromDb() {
             try {
                 setLoading(true)
-                const response = await axios.get('https://martiniapi.cyclic.app/api/order/?new=true', {
+                const response = await axios.get('https://martini-e-commerce-api.onrender.com/api/order/?new=true', {
                     headers: {
                         'auth-token': currentUser.authToken
                     }

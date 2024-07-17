@@ -16,7 +16,7 @@ const AdminUserSmallWidget = () => {
         async function getUsersFromDb() {
             try {
                 setLoading(true)
-                const response = await axios.get('https://martiniapi.cyclic.app/api/user/?new=true', {
+                const response = await axios.get('https://martini-e-commerce-api.onrender.com/api/user/?new=true', {
                     headers: {
                         'auth-token': currentUser.authToken
                     }

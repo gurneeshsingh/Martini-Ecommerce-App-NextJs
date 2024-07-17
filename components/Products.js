@@ -15,7 +15,7 @@ const Products = ({ category, filter, sort }) => {
     useEffect(() => {
         async function getProducts() {
             try {
-                const response = await axios.get(category ? `https://martiniapi.cyclic.app/api/product?category=${category}` : `https://martiniapi.cyclic.app/api/product`);
+                const response = await axios.get(category ? `https://martini-e-commerce-api.onrender.com/api/product?category=${category}` : `https://martini-e-commerce-api.onrender.com/api/product`);
                 setproducts(response.data)
             } catch (error) {
                 console.log(error);

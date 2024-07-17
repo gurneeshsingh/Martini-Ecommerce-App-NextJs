@@ -19,7 +19,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 export const getStaticPaths = async () => {
-    const response = await axios.get('https://martiniapi.cyclic.app/api/product');
+    const response = await axios.get('https://martini-e-commerce-api.onrender.com/api/product');
     const data = response.data;
 
     const paths = data?.map((element) => {
@@ -39,7 +39,7 @@ export const getStaticProps = async (context) => {
 
     const id = context.params.id
     try {
-        const response = await axios.get(`https://martiniapi.cyclic.app/api/product/find/${id}`)
+        const response = await axios.get(`https://martini-e-commerce-api.onrender.com/api/product/find/${id}`)
         const data = response.data;
 
         return {
@@ -101,7 +101,7 @@ const Product = ({ product }) => {
                     theme: "colored"
                 })
             } else {
-                const response = await axios.post('https://martiniapi.cyclic.app/api/wishlist', myObj, {
+                const response = await axios.post('https://martini-e-commerce-api.onrender.com/api/wishlist', myObj, {
                     headers: {
                         'auth-token': user?.authToken
                     }

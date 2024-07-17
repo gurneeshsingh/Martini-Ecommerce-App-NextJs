@@ -16,7 +16,7 @@ const success = () => {
     useEffect(() => {
         async function createorder() {
             try {
-                const response = await axios.post('https://martiniapi.cyclic.app/api/order', {
+                const response = await axios.post('https://martini-e-commerce-api.onrender.com/api/order', {
                     userId: currentUser.id,
                     products: cart.products.map((product) => ({ productId: product._id, quantity: product.productQuantity, brand: product.brand, title: product.title, img: product.img, size:product.size })),
                     amount: cart.cartTotalAmount,

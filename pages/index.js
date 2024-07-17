@@ -29,7 +29,7 @@ export default function Home() {
   useEffect(() => {
     async function getWishlistFromServer() {
         try {
-            const response = await axios.get(`https://martiniapi.cyclic.app/api/wishlist/find/${user?.id}`, {
+            const response = await axios.get(`https://martini-e-commerce-api.onrender.com/api/wishlist/find/${user?.id}`, {
                 headers: {
                     'auth-token': user?.authToken
                 }

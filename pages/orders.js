@@ -28,7 +28,7 @@ const orders = () => {
     useEffect(() => {
         async function makeRequestToServerAndGetOrders() {
             try {
-                const response = await axios.get(`https://martiniapi.cyclic.app/api/order/find/${user.id}`, {
+                const response = await axios.get(`https://martini-e-commerce-api.onrender.com/api/order/find/${user.id}`, {
                     headers: {
                         'auth-token': user.authToken
                     }
